@@ -53,19 +53,21 @@ Annotations:
 appimage (clang_appimage, ubuntu-22.04, x86, Linux/appimage/appimage-x86.sh)
 Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/cache@v4, actions/checkout@v4, actions/setup-dotnet@v4, actions/upload-artifact@v4, DamianReeves/write-file-action@master. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
  
-### Nota Técnica: Aviso de Depreciação do Node.js (GitHub Actions)
+### Technical Note: Node.js Depreciation Notice (GitHub Actions)
 
-O alerta visualizado nos logs de execução refere-se à transição do ambiente de execução (**runner**) das GitHub Actions. Este aviso não indica uma falha no processo de build ou no código-fonte do projeto.
+The alert displayed in the execution logs refers to the transition of the GitHub Actions runtime environment (**runner**). This notice does not indicate a failure in the build process or in the project's source code.
 
 ---
 
-### Detalhes Técnicos
-*   **Contexto:** O GitHub anunciou a depreciação do **Node.js v20** como runtime padrão para as Actions, com previsão de encerramento de suporte para meados de **2026**.
-*   **Impacto no Projeto:** Nulo. O workflow atual permanece funcional e o artefato final (AppImage) foi gerado com sucesso, conforme indicado pelo status `Success` da pipeline.
-*   **Ação Requerida:** Nenhuma ação imediata é necessária por parte dos colaboradores ou usuários. A infraestrutura do GitHub será atualizada para o **Node.js v24** automaticamente no período estipulado.
+### Technical Details
+* **Context:** GitHub has announced the deprecation of **Node.js v20** as the default runtime for Actions, with support expected to end in mid-**2026**.
 
-### Exemplo de Atualização (YAML)
-Caso deseje silenciar o aviso futuramente ou forçar o uso de uma versão específica em suas próprias Actions, a configuração no arquivo `.github/workflows/*.yml` deve seguir este padrão:
+* **Project Impact:** None. The current workflow remains functional and the final artifact (AppImage) was successfully generated, as indicated by the pipeline's `Success` status.
+
+* **Required Action:** No immediate action is required from contributors or users. The GitHub infrastructure will be automatically updated to **Node.js v24** within the stipulated period.
+
+### Example of an Update (YAML)
+If you wish to silence the warning in the future or force the use of a specific version in your own Actions, the configuration in the `.github/workflows/*.yml` file should follow this pattern:
 
 ```yaml
 jobs:
