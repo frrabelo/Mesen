@@ -40,14 +40,21 @@ ifeq ($(UNAME_S),Darwin)
 	LINKCHECKUNRESOLVED :=
 endif
 
-MESENFLAGS += -m64
+ifeq ($(ARCH),x86)
+	MESENFLAGS += -m32
+else
+	MESENFLAGS += -m64
+endif
 
 MACHINE := $(shell uname -m)
 ifeq ($(MACHINE),x86_64)
 	MESENPLATFORM := $(MESENOS)-x64
 endif
 ifneq ($(filter %86,$(MACHINE)),)
-	MESENPLATFORM := $(MESENOS)-x64
+	MESENPLATFORM := $(MESENOS)-x86
+endif
+ifeq ($(ARCH),x86)
+	MESENPLATFORM := $(MESENOS)-x86
 endif
 # TODO: this returns `aarch64` on one of my machines...
 ifneq ($(filter arm%,$(MACHINE)),)
