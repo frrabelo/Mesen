@@ -80,8 +80,7 @@ jobs:
           node-version: '24' # Atualização para a versão LTS recomendada
 ```
 
-> **Status do Build:** O aviso é estritamente informativo e não compromete a integridade binária ou a estabilidade da aplicação.
-
+> **Status do Build:** This notice is strictly for informational purposes and does not compromise the binary integrity or stability of the application.
 
 ## License
 
